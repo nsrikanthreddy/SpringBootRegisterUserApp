@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 //@CrossOrigin(origins = "http://localhost:9092" /*{"*","http://app:8080", "http://localhost:3000"}*/, allowedHeaders="*", exposedHeaders = {"Access-Control-Allow-Origin"})
 @RestController
 @RequestMapping(value= "/test")
-@CrossOrigin(origins = "http://localhost:9092", allowedHeaders = "*", exposedHeaders = {"Access-Control-Allow-Origin"},  methods = {RequestMethod.OPTIONS, RequestMethod.PUT, RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE})	
+@CrossOrigin(origins = {"*","http://localhost:9092"}, allowedHeaders = "*", exposedHeaders = {"Access-Control-Allow-Origin"},  methods = {RequestMethod.OPTIONS, RequestMethod.PUT, RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE})	
 public class UserRestController extends JdbcDaoSupport {
 	@GetMapping("/index")
 	public String index() {
